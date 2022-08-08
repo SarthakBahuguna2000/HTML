@@ -1,0 +1,80 @@
+-- Tour and Travels Database project
+--Indigo airlines want to create their own software so they need to work on database first. They want to manage employee database as well
+-- as ticket booking system, flight details means end to end solution from manpower source ticket booking customer details, flight 
+-- assignment including all dependencies, keys and normalize your table at least 2nd normal form.
+--Note: Primary key and foreign key relationship ,2nd normal form  ,DRY rules ,All tables field should be your o
+
+create database IndigoAirlines
+use IndigoAirlines
+
+create table customers(cid int primary key, cname varchar(20),age int, contact numeric(10,0), caddress varchar(20))
+create table flight(flightid int primary key,  cid int, foreign key(cid) references customers(cid) ,flightdist numeric(10,0),fName varchar(10),Froute varchar(10))
+create table employee(empid int primary key ,cid int, foreign key(cid) references customers(cid),empname varchar(20))
+
+create table tbooking(bid int, cid int ,foreign key(cid) references customers(cid),flightid int, foreign key(flightid) references flight(flightid),journeydate varchar(15) , seatno int)
+insert into customers values(101,'rohit',32,789453678,'delhi')
+insert into customers values(102,'mohit',28,729453678,'mumbai')
+insert into customers values(103,'sudhanshu',31,789453678,'delhi')
+insert into customers values(104,'kevin',23,719453678,'NYC')
+insert into customers values(105,'rusty',21,6689453678,'tennese')
+insert into customers values(106,'rampal',50,589453678,'kanpur')
+insert into customers values(107,'jessica',20,489453678,'LA')
+insert into customers values(108,'ashley',22,339453678,'london')
+insert into customers values(109,'barbie',10,789453671,'washington')
+insert into customers values(110,'anjali',29,789453670,'noida')
+
+
+ insert into flight values(1001,101,380,'mum001','mum-del')
+  insert into flight values(1002,102,390,'ban001','ban-hyd')
+   insert into flight values(1003,103,310,'del002','del-mum')
+    insert into flight values(1004,104,320,'hyd003','hyd-mum')
+	 insert into flight values(1005,105,330,'NFC001','NFC-mum')
+	  insert into flight values(1006,106,340,'LA004','LA-NFC')
+	   insert into flight values(1007,107,350,'london008','lon-LA')
+	    insert into flight values(1008,108,360,'canada002','can-del')
+    insert into flight values(1009,109,370,'kan001','kan-bengal')
+	 insert into flight values(1010,110,400,'mum001','mum-amrs')
+
+
+ insert into tbooking values(10,101,1001,'29-09-2022',3)
+  insert into tbooking values(11,102,1002,'29-10-2022',4)
+   insert into tbooking values(12,103,1003,'29-11-2022',5)
+    insert into tbooking values(13,104,1004,'09-09-2022',6)
+	 insert into tbooking values(14,105,1005,'27-08-2022',7)
+	  insert into tbooking values(15,106,1006,'19-09-2022',7)
+	   insert into tbooking values(16,107,1007,'19-08-2022',8)
+	    insert into tbooking values(17,108,1008,'29-11-2022',3)
+		 insert into tbooking values(18,109,1009,'09-09-2022',9)
+		  insert into tbooking values(19,110,1010,'29-10--2022',1)
+
+
+insert into employee values(201,101,'emp1')
+insert into employee values(202,102,'emp2')
+insert into employee values(203,103,'emp3')
+insert into employee values(204,104,'emp4')
+insert into employee values(205,105,'emp5')
+insert into employee values(206,106,'emp6')
+insert into employee values(207,107,'emp7')
+insert into employee values(208,108,'emp8')
+insert into employee values(209,109,'emp9')
+insert into employee values(210,110,'emp10')
+
+create view  view1
+as select flightid,cname,contact,flightdist,fName from customers as c full join flight as f on f.cid=c.cid
+ select * from view1
+
+ create view  view2 
+ as select bid,seatno,journeydate,flightdist,fName from tbooking as t left join flight as f on t.flightid=f.flightid
+ select * from view2
+ 
+ create procedure sp_emp1
+ as begin select bid,seatno , journeydate,cname,age from tbooking as t right join customers as c on t.cid=c.cid    order by seatno end
+
+ exec sp_emp1
+
+ create procedure sp_emp2
+  as begin select flightid , cname,flightdist from customers inner join flight on flight.cid=customers.cid end
+
+  exec sp_emp2
+
+.
