@@ -1,0 +1,46 @@
+﻿
+
+<html>
+<head>
+    <title>Penguins</title>
+</head>
+<body bgcolor="Aqua">
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 2px solid green;
+            padding: 15px;
+        }
+    </style>
+    
+    
+        <table>
+            <tr>
+                <th> Location</th>
+                <th> address</th>
+                <th> contact No</th>
+            </tr>
+            <tr>
+                <td>1 Delhi</td>
+                <td>42 , gate no 3 ,near palam </td>
+                <td>9475860324</td>
+            </tr>
+            <tr>
+                <td>2 bengalore</td>
+                <td> 3- multi duplex complex, </td>
+                <td>6897450345</td>
+            </tr>
+            <tr>
+                <td>3 mizoram</td>
+                <td> it park, near capital</td>
+                <td>345678999</td>
+            </tr>
+        </table>
+    </body>
+</html>
+
+

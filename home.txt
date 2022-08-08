@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Penguins</title>
+</head>
+   <body bgcolor="Aqua">
+
+       <center>
+           <hr>
+           <h1> Welcome to Winters  </h1> <hr>
+           <h3>Buy anything for winters. Make yourself at home!</h3>
+           
+           <a href="file:///C:/Users/Sarthak.Bahuguna/source/repos/HTMLPage1.html">Homepage</a>
+           <p>
+               Links:
+               <a href="file:///C:/Users/Sarthak.Bahuguna/source/repos/HTMLPage2.html">Contact us</a>
+               <a href="file:///C:/Users/Sarthak.Bahuguna/source/repos/HTMLPage3.html">Gallery</a>
+           </p>
+
+       </center>
+     <div> Welcome to Penguins . Here you can buy anyhting related to winters</div>
+    
+       
+
+                        
+</body>
+</html>

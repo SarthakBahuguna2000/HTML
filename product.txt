@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<head>
+    <title>Penguins</title>
+</head>
+<body bgcolor="Aqua">
+
+    <center>
+        <hr>
+        <h1> Welcome to Winters  </h1> <hr>
+        <h3>Buy anything for winters. Make yourself at home!</h3></center>
+
+        
+        
+            <div> Welcome to Penguins . Here you can buy anyhting related to winters</div>
+            <div>
+                <marquee onmouseover="stop(this)" onmouseout="start(this)">
+                    <img src="https://sslimages.shoppersstop.com/sys-master/images/h67/h20/17461899984926/A21STPQTRYTE_TEAL.jpg_230Wx334H" width="300" height="200">
+                    <img src="https://assets.seniority.in/media/wysiwyg/Carbon_Fibre_Room_Heater.png" width="300" height="200">
+                    <img src="https://assets.seniority.in/media/wysiwyg/Velvet_Electric_Blanket.png"
+                         width="300"
+                         height="200" />
+                    <img src="https://rukminim1.flixcart.com/image/495/594/xif0q/track-pant/v/y/r/s-combo-tr1-vebnor-original-imagcgf9cqsgzwvb-bb.jpeg?q=50"
+                         width="300"
+                         height="200" />
+
+                </marquee>
+            </div>
+        </body>
