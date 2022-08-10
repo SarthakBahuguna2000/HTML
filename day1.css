@@ -1,0 +1,36 @@
+﻿
+    body{
+       background-color:lightgrey;
+
+
+    }
+    .container{
+    width: 300px;
+    margin-left: 60px;
+    background-color:aqua;
+    border: 6px solid black ;
+    display: inline-block;
+
+    box-shadow: 0 5px 14px 0 rgba(0,0, 0, 0.2);
+    transition: 0.3s;
+
+    }
+    .container:hover{
+    box-shadow: 0 16px 28px 0 rgba(4,4, 4, 4);
+    }
+    .heading1{
+    font-family: Impact, Haettenschweiler, sans-serif;
+    padding-left: 02px;
+    text-align:center;
+    }
+    .img{
+    margin-top: 0;
+    }
+    .img-1{
+    height: 150px;
+
+    }
+.b1 {
+    background-color: lightcoral;
+    border-radius: 32%;
+}
