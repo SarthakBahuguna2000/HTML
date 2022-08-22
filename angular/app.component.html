@@ -1,0 +1,76 @@
+<header>
+  <div class="label">
+    <a href="#" id="crypto"><h3>Welcome to {{company}}</h3></a>
+  </div>
+  <div class="navbar">
+    <ul>
+      <li><a class="active" href="#">Home</a></li>
+      <li><a [routerLink]="['/studentlink']">Student</a></li>
+      <li><a [routerLink]="['/studentdetailslink']">StudentDetails</a></li>
+    </ul>
+    <div>
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</header>
+ <br>
+ <div>
+  <h1>Structural derivatives</h1></div>
+  <hr>
+  <div>
+    <input type="button" value="Click me" (click)="show()">
+  </div>
+  <hr>
+
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Branch</th>
+        <th>Gender</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let stu of student">
+        <td>{{stu.ID}}</td>
+        <td>{{stu.Name}}</td>
+        <td>{{stu.Branch}}</td>
+        <td>{{stu.Gender}}</td>
+      </tr>
+      <tr *ngIf="!student || student.length==0">
+        <td colspan="4">No student to display</td>
+      </tr>
+    </tbody>
+  </table>
+  <hr>
+  <h2>Choose country</h2>
+  <select (change)="setdropdownvalue($event)">
+    <option value="">Select</option>
+    <option value="IN">India</option>
+    <option value="SL">Srilanka</option>
+    <option value="UAE">UAE</option>
+    <option value="AUS">Australia</option>
+  </select>
+
+  <h2>You have selected</h2>
+
+  <div [ngSwitch]="dropdownvalue">
+    <h3 *nfSwitchCase="'IN'">India</h3>
+    <h3 *nfSwitchCase="'SL'">Srilanka</h3>
+    <h3 *nfSwitchCase="'UAE'">UAE</h3>
+    <h3 *nfSwitchCase="'AUS'">Australia</h3>
+    <h3 *nfSwitchCase="''">You have not selected anything</h3>
+  </div>
+  <hr>
+
+  <div>
+    <button [ngStyle]="adbuttonstyles()">Click me</button>
+  </div>
+
+  <hr>
+  <div *ngFor="let stu of student">
+    <span [ngStyle]="{'background-color':stu.Gender==='Male'? ',yellow':'grey'}">
+      Name:{{stu.Name}},Gender:{{stu.Gender}},Branch:{{stu.Branch}}
+    </span>
+  </div>
